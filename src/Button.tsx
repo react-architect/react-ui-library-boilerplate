@@ -9,6 +9,7 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 const StyledButton = styled.button<IButtonProps>`
     color: yellow;
     background: black;
+    margin: 5px;
 `;
 
 export const Button = (props: IButtonProps) => <StyledButton {...props}>{props.text}</StyledButton>;

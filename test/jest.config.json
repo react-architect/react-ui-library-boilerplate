@@ -1,0 +1,5 @@
+{
+  "testRegex": "((\\.|/*.)(stories))\\.tsx?$",
+  "rootDir": "..",
+  "setupFilesAfterEnv": ["<rootDir>/test/jest.setup.js"]
+}

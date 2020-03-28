@@ -4,5 +4,5 @@ import { Button } from './Button';
 
 storiesOf('Button', module)
     .add('simple button', () => (
-        <Button text="Click me" />
+        <Button text="Click me twice" />
     ));

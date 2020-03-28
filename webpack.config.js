@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 const path = require('path');
 
@@ -52,8 +53,8 @@ module.exports = {
                 ]
             },
             {
-                test: /\.tsx?$/,
-                use: ['ts-loader']
+                test: /\.(ts|js)x?$/,
+                loader: 'babel-loader', exclude: /node_modules/
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -75,6 +76,10 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: 'styles.css'
+        }),
+        new ForkTsCheckerWebpackPlugin({
+            // only look into the src/-folder
+            reportFiles: ['src/**/*.{ts,tsx}']
         })
     ]
 };
